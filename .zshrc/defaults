@@ -1,0 +1,16 @@
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+autoload -U promptinit
+promptinit
+
+# End of lines added by compinstall
+
+#autoload -U compinit promptinit
+#compinit
+#promptinit;
+#prompt gentoo

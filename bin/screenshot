@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. _APPLICATION_CONFIG_PATH_
+
+if [ -z "$_SCREENSHOT_CMD" ]; then
+	exitWithError "_SCREENSHOT_CMD is null, it must be set, recommend: scrot"
+fi
+
+$_SCREENSHOT_CMD $_SCREENSHOT_OPTIONS $_SCREENSHOT_FILENAME_ARG $_SCREENSHOT_FILENAME

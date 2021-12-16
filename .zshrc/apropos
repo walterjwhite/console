@@ -1,0 +1,2 @@
+# setup an alias for apropos since the name is non-intuitive
+alias man-search='apropos'

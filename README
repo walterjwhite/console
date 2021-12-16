@@ -1,1 +1,39 @@
-console placeholder
+FreeBSD
+    notifications
+        beep (console beep utility, can change tone, duration, number of beeps, etc.)
+
+        # sample ~/.config/walterjwhite/console
+        _SCREENSHOT_CMD=scrot
+
+        #_AFTER_CMD=beep
+
+        _after() {
+            beep
+        }
+
+        _timeout() {
+            _TIMEOUT=$(date -v +30S +%Y%m%d%H%M%S)
+        }
+
+        _current_time() {
+            _CURRENT_TIME=$(date +%Y%m%d%H%M%S)
+        }
+
+Windows
+    notifications
+        Windows 10 Toast
+
+        # sample ~/.config/walterjwhite/console
+        #_SCREENSHOT_CMD=scrot
+
+        _after() {
+            powershell -f ~/.config/walterjwhite/console-notifications.ps1 <SUBJECT> <DETAILS>
+        }
+
+        _timeout() {
+            _TIMEOUT=$(date -v +30S +%Y%m%d%H%M%S)
+        }
+
+        _current_time() {
+            _CURRENT_TIME=$(date +%Y%m%d%H%M%S)
+        }

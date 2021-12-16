@@ -1,0 +1,4 @@
+# set default editor as nano
+# @TODO: this depends on installing nano
+#export EDITOR=nano
+export EDITOR=micro
