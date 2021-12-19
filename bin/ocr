@@ -3,11 +3,11 @@
 . _APPLICATION_CONFIG_PATH_
 
 if [ -z "$_OCR_CMD" ]; then
-	exitWithError "_OCR_CMD is null, it must be set, recommend: tesseract" 1
+	_exitWithError "_OCR_CMD is null, it must be set, recommend: tesseract" 1
 fi
 
 if [ $# -lt 1 ]; then
-	exitWithError "Input image is required" 2
+	_exitWithError "Input image is required" 2
 fi
 
 _OCR_FILENAME_ARG=$1

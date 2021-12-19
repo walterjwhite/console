@@ -4,7 +4,7 @@
 . _CONFIG_PATH_/install
 
 if [ -z "$_SH_RC_PATH" ]; then
-	exitWithError "_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
+	_exitWithError "_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
 fi
 
 _ZSH_RC_PATH=$_SH_RC_PATH/zshrc
