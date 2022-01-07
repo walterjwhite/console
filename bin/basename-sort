@@ -1,0 +1,8 @@
+#!/bin/sh
+
+_IN=$(cat /dev/stdin | tr '\n' ' ')
+if [ -z "$_IN" ]; then exit 1; fi
+
+for _SORTED in $(basename $_IN | sort -u); do
+	echo $_IN | tr ' ' '\n' | grep "/$_SORTED"
+done

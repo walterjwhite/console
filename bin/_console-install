@@ -1,0 +1,21 @@
+#!/bin/sh
+
+. _LIBRARY_PATH_/_APPLICATION_NAME_/include.sh
+
+_install_shell_settings() {
+	# TODO: allow user to install additional configuration files (in addition to the system-provided ones)
+	# all platform files
+	if [ -e .console/$1 ]; then
+		for _SCRIPT in $(ls .console/$1); do
+			_TARGET=$_SH_RC_PATH/$_SCRIPT
+
+			mkdir -p $_TARGET
+			cp .console/$1/$_SCRIPT/* $_TARGET
+		done
+	fi
+}
+
+_install_shell_settings all
+
+# platform-specific files
+_install_shell_settings $_PLATFORM
