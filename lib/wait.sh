@@ -1,5 +1,16 @@
 #!/bin/sh
 
+_on_exit() {
+	_cleanup
+
+	_waitee_done
+}
+
+# to be overridden as required
+_cleanup() {
+	:
+}
+
 _waitee_start() {
 	_warn "Please use $$ (-w=$$) for the downstream process"
 	mkfifo /tmp/$$
@@ -30,6 +41,8 @@ _waiter() {
 	# remove pipe
 	rm -f /tmp/$1
 }
+
+trap _on_exit INT 0 1 2 3 4
 
 for _ARG in "$@"; do
 	case "$_ARG" in

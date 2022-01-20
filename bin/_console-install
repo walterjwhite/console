@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. _LIBRARY_PATH_/_APPLICATION_NAME_/include.sh
+. _LIBRARY_PATH_/_APPLICATION_NAME_/setup/include.sh
 
 _install_shell_settings() {
 	# TODO: allow user to install additional configuration files (in addition to the system-provided ones)

@@ -1,14 +1,5 @@
 #!/bin/sh
 
-. _APPLICATION_CONFIG_PATH_
-. _CONFIG_PATH_/install
-
-# if [ ! -e ~/.config/walterjwhite/console ]; then
-# 	_exitWithError "~/.config/walterjwhite/console configuration does NOT exist, unable to continue" 1
-# fi
-
-# . ~/.config/walterjwhite/console
-
 if [ -z "$_SH_RC_PATH" ]; then
 	_exitWithError "_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
 fi

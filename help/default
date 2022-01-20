@@ -1,0 +1,9 @@
+system-wide options:
+    -d enable debug
+    -h print help
+
+    -w=<PID>
+        wait for PID to complete prior to starting
+    -w
+        open a named pipe @ /tmp/$$ (PID) to trigger a downstream process
+            _waitee_done must be called @ completion to trigger downstream process
