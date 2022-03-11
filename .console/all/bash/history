@@ -1,0 +1,6 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.data/walterjwhite/bash.history
+mkdir -p $(dirname $HISTFILE)
+
+HISTSIZE=1000
+SAVEHIST=1000

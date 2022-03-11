@@ -1,0 +1,40 @@
+#!/bin/sh
+
+if [[ $- != *i* ]]; then
+	# Shell is non-interactive.
+	exit
+fi
+
+. ~/.config/walterjwhite/console
+
+_log() {
+	local _message="### $1 - $(date "+%Y/%m/%d %H:%M:%S %Z") ###"
+	echo -e "\e[1;3;34m$_message\e[0m ${3}"
+}
+
+before_prompt() {
+	_log Before
+
+	_timeout
+}
+
+before_command() {
+	_log After
+
+	_current_time
+	if [ -n "$_CURRENT_TIME" ] && [ -n "$_TIMEOUT" ]; then
+		if [ $_CURRENT_TIME -gt $_TIMEOUT ]; then
+			_after
+		fi
+	fi
+}
+
+preexec_invoke_exec() {
+	[ -n "$COMP_LINE" ] && return                     # do nothing if completing
+	[ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return # don't cause a preexec for $PROMPT_COMMAND
+	local this_command=$(HISTTIMEFORMAT= history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//")
+	before_prompt "$this_command"
+}
+trap 'preexec_invoke_exec' DEBUG
+
+#echo >&2 -e "$(date "+$_DATE_FORMAT") \e[35m$1\e[0m"

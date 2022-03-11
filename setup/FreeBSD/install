@@ -2,14 +2,16 @@
 
 . _LIBRARY_PATH_/_APPLICATION_NAME_/setup/include.sh
 
-_console_install
+for _SHELL in $(ls .files/all); do
+	_console_install
 
-# run for current user
-_HOME=$HOME
-_zsh_conf
+	# run for current user
+	_HOME=$HOME
+	_console_conf
 
-# setup other users (linux/unix only)
-for _OTHER_USER in $(grep video /etc/group | awk -F':' {'print$4'} | tr ',' '\n'); do
-	_HOME=$($_SUDO_PROGRAM -u $_OTHER_USER env | grep HOME | cut -f2 -d'=')
-	_zsh_conf
+	# setup other users (linux/unix only)
+	for _OTHER_USER in $(grep video /etc/group | awk -F':' {'print$4'} | tr ',' '\n'); do
+		_HOME=$($_SUDO_PROGRAM -u $_OTHER_USER env | grep HOME | cut -f2 -d'=')
+		_console_conf
+	done
 done

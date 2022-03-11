@@ -2,11 +2,13 @@
 
 . _LIBRARY_PATH_/_APPLICATION_NAME_/setup/include.sh
 
-_console_install
-
-# run for current user
-_HOME=$HOME
-_zsh_conf
-
 # setup windows 10 notifications
 cp .files/notifications.ps1 $_HOME/.config/walterjwhite/console-notifications.ps1
+
+for _SHELL in $(ls .files/all); do
+	_console_install $_SHELL
+
+	# run for current user
+	_HOME=$HOME
+	_console_conf
+done
