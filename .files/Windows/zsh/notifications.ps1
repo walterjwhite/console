@@ -25,7 +25,7 @@ $template = @"
 	<visual>
 		<binding template="ToastText02">
 			<text id="1">$($title)</text>
-			<text id="2">#($body)</text>
+			<text id="2">$($body)</text>
 		</binding>
 	</visual>
 </toast>

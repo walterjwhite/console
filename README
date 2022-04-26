@@ -27,7 +27,7 @@ Windows
         #_SCREENSHOT_CMD=scrot
 
         _after() {
-            powershell -f ~/.config/walterjwhite/console-notifications.ps1 <SUBJECT> <DETAILS>
+            powershell -f ~/.config/walterjwhite/console-notifications.ps1 <APPLICATION_NAME> <SUBJECT> <DETAILS>
         }
 
         _timeout() {
