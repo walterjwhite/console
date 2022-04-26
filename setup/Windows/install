@@ -3,8 +3,7 @@
 . _LIBRARY_PATH_/_APPLICATION_NAME_/setup/include.sh
 
 # setup windows 10 notifications
-_require "$_HOME" "_HOME" 1
-cp .files/Windows/notifications.ps1 $_HOME/.config/walterjwhite/console-notifications.ps1
+cp .files/Windows/notifications.ps1 $HOME/.config/walterjwhite/console-notifications.ps1
 
 for _SHELL in $(ls .files/all); do
 	_console_install $_SHELL
