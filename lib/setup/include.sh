@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ -z "$_SH_RC_PATH" ]; then
-	_exitWithError "_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
+if [ -z "$_CONF_SH_RC_PATH" ]; then
+	_exitWithError "_CONF_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
 fi
 
 _console_install() {
 	# copy over settings
-	mkdir -p $_SH_RC_PATH/$_SHELL
+	mkdir -p $_CONF_SH_RC_PATH/$_SHELL
 	if [ -e .console/all/$_SHELL ]; then
-		cp .console/all/$_SHELL/* $_SH_RC_PATH/$_SHELL
+		cp .console/all/$_SHELL/* $_CONF_SH_RC_PATH/$_SHELL
 	fi
 }
 

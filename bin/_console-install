@@ -7,7 +7,7 @@ _install_shell_settings() {
 	# all platform files
 	if [ -e .console/$1 ]; then
 		for _SCRIPT in $(ls .console/$1); do
-			_TARGET=$_SH_RC_PATH/$_SCRIPT
+			_TARGET=$_CONF_SH_RC_PATH/$_SCRIPT
 
 			mkdir -p $_TARGET
 			cp .console/$1/$_SCRIPT/* $_TARGET

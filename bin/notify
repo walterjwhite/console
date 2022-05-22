@@ -1,0 +1,22 @@
+#!/bin/sh
+
+for _ARG in "$@"; do
+	case $_ARG in
+	-h=*)
+		_HEADER="${_ARG#*=}"
+		;;
+	-m=*)
+		_MESSAGE="${_ARG#*=}"
+		;;
+	-s=*)
+		_SUBJECT="${_ARG#*=}"
+		;;
+	esac
+done
+
+_require "$_HEADER" _HEADER 1
+_require "$_SUBJECT" _SUBJECT 1
+_require "$_MESSAGE" _MESSAGE 1
+
+# _notify must be configured in ~/.config/walterjwhite/console as a function
+_notify "$_HEADER" "$_SUBJECT" "$_MESSAGE"

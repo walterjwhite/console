@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for _ZSH_SCRIPT_ in $(find $_ZSH_RC_PATH -type f); do
+for _ZSH_SCRIPT_ in $(find $_CONF_SH_RC_PATH/zsh -type f); do
 	. $_ZSH_SCRIPT_
 done
 

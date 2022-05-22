@@ -1,1 +1,4 @@
-eval $(keychain --eval --agents ssh id_ecdsa)
+which keychain >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+	eval $(keychain --eval --agents ssh id_ecdsa)
+fi
