@@ -11,7 +11,7 @@ for _SHELL in $(ls .files/all); do
 
 	# setup other users (linux/unix only)
 	for _OTHER_USER in $(grep video /etc/group | awk -F':' {'print$4'} | tr ',' '\n'); do
-		_HOME=$($_SUDO_PROGRAM -u $_OTHER_USER env | grep HOME | cut -f2 -d'=')
+		_HOME=$($_CONF_SUDO_PROGRAM -u $_OTHER_USER env | grep HOME | cut -f2 -d'=')
 		_console_conf
 	done
 done
