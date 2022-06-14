@@ -71,7 +71,7 @@ _waiter() {
 			break
 		fi
 
-		_info "\tUpstream is still running: $_UPSTREAM_APPLICATION_PIPE ($_UPSTREAM_STATUS)"
+		_info " Upstream is still running: $_UPSTREAM_APPLICATION_PIPE ($_UPSTREAM_STATUS)"
 	done
 }
 
