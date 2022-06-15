@@ -3,7 +3,6 @@
 . _LIBRARY_PATH_/_APPLICATION_NAME_/setup/include.sh
 
 _install_shell_settings() {
-	# TODO: allow user to install additional configuration files (in addition to the system-provided ones)
 	# all platform files
 	if [ -e .console/$1 ]; then
 		for _SCRIPT in $(ls .console/$1); do

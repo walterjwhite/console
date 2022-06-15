@@ -37,7 +37,6 @@ _waitee_done() {
 	if [ -n "$_WAITEE" ]; then
 		_info "$0 process completed, notifying"
 
-		### TODO: to use a timeout here or not
 		echo "done" >$_APPLICATION_PIPE
 
 		_info "$0 downstream process picked up"
