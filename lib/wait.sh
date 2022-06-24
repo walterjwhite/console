@@ -27,9 +27,10 @@ _waitee_start() {
 		_warn "Please use $$ (-w=$$) for the downstream process"
 	fi
 
-	_APPLICATION_PIPE=/tmp/$_APPLICATION_NAME/$$
+	_APPLICATION_PIPE=/tmp/$_APPLICATION_NAME/$(basename $0)/$$
+	_APPLICATION_PIPE_DIR=$(dirname $_APPLICATION_PIPE)
 
-	mkdir -p $(dirname $_APPLICATION_PIPE)
+	mkdir -p $_APPLICATION_PIPE_DIR
 	mkfifo $_APPLICATION_PIPE
 }
 
