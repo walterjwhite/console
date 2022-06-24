@@ -49,7 +49,7 @@ _waiter() {
 	_UPSTREAM_APPLICATION_PIPE=$(find /tmp -type p -name $1 2>/dev/null | head -1)
 
 	if [ -z "$_UPSTREAM_APPLICATION_PIPE" ]; then
-		_exitWithError "$1 not found" 1
+		_exit_with_error "$1 not found" 1
 	fi
 
 	if [ ! -e $_UPSTREAM_APPLICATION_PIPE ]; then

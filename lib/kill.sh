@@ -31,17 +31,17 @@ for _ARG in "$@"; do
 	-kill-all)
 		_kill_all
 
-		_exitSuccess "Killed"
+		_exit_success "Killed"
 		;;
 	-kill=*)
 		_kill ${_ARG#*=}
 
-		_exitSuccess "Killed"
+		_exit_success "Killed"
 		;;
 	-l)
 		_list
 
-		_exitSuccess "listed running processes"
+		_exit_success "listed running processes"
 		;;
 	esac
 done

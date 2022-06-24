@@ -7,6 +7,6 @@ _require_file() {
 			return 1
 		fi
 
-		_exitWithError "$1 does not exist" 1
+		_exit_with_error "$1 does not exist" 1
 	fi
 }

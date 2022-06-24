@@ -7,7 +7,7 @@ _LOCKFILE=/tmp/$(whoami)/$(basename $0).lock
 # if > 0, wait, else fail immediately
 _LOCK_TIMEOUT=0
 
-_runOne() {
+_run_one() {
 	mkdir -p $(dirname $_LOCKFILE)
 
 	(

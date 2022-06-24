@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$_CONF_SH_RC_PATH" ]; then
-	_exitWithError "_CONF_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
+	_exit_with_error "_CONF_SH_RC_PATH is null, it must be set, recommend: /usr/local/walterjwhite/shrc, custom settings will be installed here"
 fi
 
 _console_install() {
