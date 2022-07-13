@@ -7,17 +7,14 @@ _enable_debug() {
 	set -x
 }
 
-for _ARG in "$@"; do
-	case "$_ARG" in
+if [ $# -gt 0 ]; then
+	case $1 in
 	-d)
 		_DEBUG=1
-
-		# remove argument
-		set -- $(echo $* | sed -e "s/-d//")
-
+		shift
 		;;
 	esac
-done
+fi
 
 if [ -n "$_DEBUG" ]; then
 	_enable_debug

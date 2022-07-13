@@ -75,22 +75,21 @@ _waiter() {
 	done
 }
 
-# https://phoenixnap.com/kb/bash-trap-command
-trap _on_exit INT 0 1 2 3 4 15
-
-for _ARG in "$@"; do
-	case "$_ARG" in
+if [ $# -gt 0 ]; then
+	case $1 in
 	-w=*)
-		_waiter "${_ARG#*=}"
-
-		set -- $(echo $* | sed -e "s/$_ARG//")
+		_waiter "${1#*=}"
+		shift
 		;;
 	-w)
-		set -- $(echo $* | sed -e "s/-w//")
 		_WAITEE=1
+		shift
 		;;
 	esac
-done
+fi
+
+# https://phoenixnap.com/kb/bash-trap-command
+trap _on_exit INT 0 1 2 3 4 15
 
 # always open the pipe so we can easily identify processes later
 _waitee_start

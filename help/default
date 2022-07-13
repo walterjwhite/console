@@ -1,9 +1,15 @@
 system-wide options:
-    -d enable debug
     -h print help
+    -d enable debug
 
     -w=<PID>
         wait for PID to complete prior to starting
     -w
         open a named pipe @ /tmp/$$ (PID) to trigger a downstream process
             _waitee_done must be called @ completion to trigger downstream process
+    
+
+    NOTE: arguments are listed in the order they are processed
+        -h must be first, program prints help and exits immediately
+        -d if enabled, must be listed prior to other options, if listed later, it will be excluded
+        -w must be listed after debug
