@@ -1,0 +1,8 @@
+#!/bin/sh
+
+import setup/console.sh
+
+for _USER in $($_CONF_INSTALL_GNU_GREP -P '^(wheel|operator|video):' /etc/group | cut -f4 -d':' | tr ',' '\n' | sort -u); do
+	_HOME=$($_SUDO_CMD -u $_USER env | grep HOME | cut -f2 -d'=')
+	_SHELL=zsh _console_conf
+done
