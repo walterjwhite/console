@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for _CONSOLE in $(find -s $_CONF_INSTALL_APPLICATION_LIBRARY_PATH/shell -type d -depth 1); do
+  printf 'export LESSOPEN="| %s %s"\n' "$_CONF_CONSOLE_SOURCE_HIGHTLIGHT" '%s' | _write $_CONSOLE/source-highlight-less
+  printf 'export LESS=" -R "\n' | _write $_CONSOLE/source-highlight-less
+done

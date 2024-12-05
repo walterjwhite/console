@@ -1,0 +1,15 @@
+#!/bin/sh
+
+_REQUIRED_ARGUMENTS="_ACTION:The action to perform"
+
+import .
+import git:install/sed.sh
+
+case $_ACTION in
+archive | get | list | set | unarchive | comment | comments | summary)
+	_console_${_ACTION} "$@"
+	;;
+*)
+	_error "Unrecognized action: $_ACTION"
+	;;
+esac
